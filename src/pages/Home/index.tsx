@@ -1,5 +1,5 @@
-import { Button, Col, Divider, Row, Typography } from "antd";
-import React, { FunctionComponent } from "react";
+import { Button, Col, Divider, Modal, Row, Typography } from "antd";
+import React, { FunctionComponent, useLayoutEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import "./home.scss";
@@ -8,8 +8,22 @@ const { Title, Paragraph } = Typography;
 
 const Home: FunctionComponent<{}> = () => {
   const history = useHistory();
+  useLayoutEffect(() => {
+    Modal.info({
+      title: "This website isn't finished yet!",
+      content: (
+        <div>
+          <p>
+            This is a work-in-progress, but you're welcome to have a look
+            around!
+          </p>
+        </div>
+      )
+    });
+  });
   const goToSignUp = () => history.push("/sign-up");
   const goToRequestHelp = () => history.push("/request-help");
+
   return (
     <>
       <div className="hero">
