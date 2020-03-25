@@ -10,7 +10,13 @@ const SignUpForm: FunctionComponent<{}> = () => {
     Record<number, boolean>
   >({});
   return (
-    <Form layout="vertical" form={form} name="sign-up" size="large">
+    <Form
+      layout="vertical"
+      form={form}
+      name="sign-up"
+      size="large"
+      data-netlify="true"
+    >
       <Row gutter={16}>
         <Col xs={24} md={12}>
           <Form.Item
