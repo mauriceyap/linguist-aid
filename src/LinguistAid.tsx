@@ -1,3 +1,4 @@
+import { FacebookFilled } from "@ant-design/icons";
 import { Layout } from "antd";
 import React, { FunctionComponent } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -50,6 +51,11 @@ const LinguistAid: FunctionComponent<{}> = () => (
           Also, a massive thank you to{" "}
           <a href="https://www.netlify.com">Netlify</a> for generously hosting
           and powering this site for free!
+          <div className="icons">
+            <a href="https://fb.me/linguist.aid">
+              <FacebookFilled />
+            </a>
+          </div>
         </Footer>
       </Layout>
     </div>
