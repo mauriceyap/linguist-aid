@@ -83,7 +83,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
             <div>
               {fields.map((field, index) => (
                 <Row gutter={[20, 20]} key={field.key}>
-                  <Col xs={11}>
+                  <Col xs={24} sm={11}>
                     <Form.Item
                       name={[field.name, "language"]}
                       validateTrigger={["onChange", "onBlur"]}
@@ -143,7 +143,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
                       )}
                     </Row>
                   </Col>
-                  <Col xs={11}>
+                  <Col xs={22} sm={11}>
                     <Form.Item
                       name={[field.name, "skills"]}
                       validateTrigger={["onChange", "onBlur"]}
