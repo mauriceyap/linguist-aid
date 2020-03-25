@@ -39,6 +39,7 @@
   position: fixed;
   left: 0;
   padding-top: 64px;
+  z-index: 100;
 
   @media (min-width: 768px) {
     display: none;
