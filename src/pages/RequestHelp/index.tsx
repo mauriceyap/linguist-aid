@@ -18,7 +18,8 @@ const RequestHelp: FunctionComponent<{}> = () => {
         signed up, we will require verification that you belong to part of a
         local mutual aid group before matching you up. This could involve us
         verifying your email address as one which is used for a mutual aid
-        group, or through a Facebook profile which administers a Facebook group.
+        group, or through a Facebook profile which administers a mutual aid
+        group on Facebook.
       </Paragraph>
     </>
   );

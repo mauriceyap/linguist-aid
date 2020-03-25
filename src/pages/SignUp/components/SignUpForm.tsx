@@ -13,11 +13,15 @@ const SignUpForm: FunctionComponent<{}> = () => {
   const [formSubmittedSuccess, setFormSubmittedSuccess] = useState<
     boolean | null
   >(null);
-  const onSubmit = (values: Record<string, any>) => {
+  const onSubmit = ({ languages, ...otherValues }: Record<string, any>) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encodeFormValues({ "form-name": "sign-up", ...values })
+      body: encodeFormValues({
+        "form-name": "sign-up",
+        languages: JSON.stringify(languages),
+        ...otherValues
+      })
     })
       .then(response => setFormSubmittedSuccess(response.ok))
       .catch(() => setFormSubmittedSuccess(false));
@@ -49,7 +53,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
         size="large"
         onFinish={onSubmit}
       >
-        <Row gutter={16}>
+        <Row gutter={20}>
           <Col xs={24} md={12}>
             <Form.Item
               label="Your name (Roman/English)"
@@ -61,7 +65,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
                 }
               ]}
             >
-              <Input placeholder="e.g. Boris Yeltsin, Jackie Chan" />
+              <Input placeholder="e.g. Mohamed Salah" />
             </Form.Item>
           </Col>
           <Col xs={24} md={12}>
@@ -70,7 +74,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
               name="name-native-script"
               rules={[]}
             >
-              <Input placeholder="e.g. Борис Ельцин, 陳港生" />
+              <Input placeholder="e.g. محمد صلاح" />
             </Form.Item>
           </Col>
         </Row>
@@ -78,7 +82,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
           {(fields, { add, remove }) => (
             <div>
               {fields.map((field, index) => (
-                <Row gutter={[16, 16]} key={field.key}>
+                <Row gutter={[20, 20]} key={field.key}>
                   <Col xs={11}>
                     <Form.Item
                       name={[field.name, "language"]}
@@ -151,7 +155,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
                       ]}
                       label="Skills in this language"
                     >
-                      <Select defaultValue="both">
+                      <Select>
                         <Select.Option value="both">
                           Speak, read and write
                         </Select.Option>

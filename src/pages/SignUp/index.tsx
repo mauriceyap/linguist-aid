@@ -33,8 +33,9 @@ const SignUp: FunctionComponent<{}> = () => {
         <li>
           <Text>
             You can request for your data to be deleted at any time by sending a
-            message to <a href="https://m.me/linguist.aid">our Facebook page</a>
-            .
+            message to <a href="https://m.me/linguist.aid">our Facebook page</a>{" "}
+            or emailing us. You can find our email address through the link at
+            the bottom of the page.
           </Text>
         </li>
         <li>
