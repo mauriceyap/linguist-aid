@@ -4,29 +4,54 @@
   position: fixed;
   z-index: 1;
   width: 100%;
+
+  .nav-bar-menu {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: initial;
+    }
+  }
 }
 
 #content-container {
   margin: 96px auto 32px;
   min-height: calc(100vh - 64px);
-  width: 100%;
+  padding: 0 30px 0 110px;
 
   @media (min-width: 576px) {
-    width: 95%;
+    width: 90%;
   }
   @media (min-width: 768px) {
-    width: 90%;
+    padding-left: 30px;
   }
   @media (min-width: 992px) {
     width: 85%;
   }
   @media (min-width: 1200px) {
-    width: 80%;
+    max-width: 960px;
+  }
+}
+
+#sider {
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  padding-top: 64px;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 
 #footer {
   background: #bbb;
+  margin-left: 80px;
+
+  @media (min-width: 768px) {
+    margin-left: 0;
+  }
 
   .icons {
     float: right;

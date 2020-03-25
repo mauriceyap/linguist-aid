@@ -13,7 +13,7 @@ import "./LinguistAid.scss";
 import NavBarMenu from "./components/NavBarMenu";
 import About from "./pages/About";
 
-const { Header, Footer, Content } = Layout;
+const { Header, Footer, Content, Sider } = Layout;
 
 const LinguistAid: FunctionComponent<{}> = () => (
   <Router>
@@ -24,24 +24,29 @@ const LinguistAid: FunctionComponent<{}> = () => (
           <Link to="/">
             <Logo />
           </Link>
-          <NavBarMenu />
+          <NavBarMenu mode="horizontal" />
         </Header>
-        <Content id="content-container">
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/sign-up" exact>
-              <SignUp />
-            </Route>
-            <Route path="/request-help" exact>
-              <RequestHelp />
-            </Route>
-            <Route path="/about" exact>
-              <About />
-            </Route>
-          </Switch>
-        </Content>
+        <Layout>
+          <Sider collapsible id="sider" defaultCollapsed>
+            <NavBarMenu mode="inline" />
+          </Sider>
+          <Content id="content-container">
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/sign-up" exact>
+                <SignUp />
+              </Route>
+              <Route path="/request-help" exact>
+                <RequestHelp />
+              </Route>
+              <Route path="/about" exact>
+                <About />
+              </Route>
+            </Switch>
+          </Content>
+        </Layout>
         <Footer id="footer">
           Made and run with{" "}
           <span role="img" aria-label="love">

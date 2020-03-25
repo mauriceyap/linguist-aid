@@ -1,31 +1,32 @@
 import { Menu } from "antd";
+import { MenuProps } from "antd/lib/menu";
 import React, { FunctionComponent } from "react";
 import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 
-interface IMenuItem {
-  route: string;
-  displayText: string;
-}
-const menuItems: IMenuItem[] = [
-  {
-    route: "/sign-up",
-    displayText: "I want to volunteer!"
-  },
-  {
-    route: "/request-help",
-    displayText: "We need help!"
-  }
-];
+import menuItems from "../const/menuItems";
 
-interface INavBarMenuProps extends RouteComponentProps {}
+import "./navBarMenu.scss";
+
+interface INavBarMenuProps extends RouteComponentProps {
+  mode: MenuProps["mode"];
+}
 
 const NavBarMenu: FunctionComponent<INavBarMenuProps> = ({
-  location: { pathname }
+  location: { pathname },
+  mode
 }) => (
-  <Menu mode="horizontal" theme="dark" selectedKeys={[pathname]}>
-    {menuItems.map(({ route, displayText }) => (
+  <Menu
+    mode={mode}
+    theme="dark"
+    selectedKeys={[pathname]}
+    className="nav-bar-menu"
+  >
+    {menuItems.map(({ route, displayText, icon }) => (
       <Menu.Item key={route}>
-        <Link to={route}>{displayText}</Link>
+        {icon}
+        <span className="nav-bar-menu__link">
+          <Link to={route}>{displayText}</Link>
+        </span>
       </Menu.Item>
     ))}
   </Menu>

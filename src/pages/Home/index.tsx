@@ -29,10 +29,10 @@ const Home: FunctionComponent<{}> = () => {
       <div className="hero">
         <div className="hero__title">Linguist Aid</div>
         <div className="hero__content">
-          During this Covid-19 outbreak, we're helping to connect{" "}
+          During this COVID-19 outbreak, we're helping to connect{" "}
           <strong>multi-lingual volunteers</strong> to{" "}
-          <strong>mutual aid groups</strong> around the UK to provide free help
-          with:
+          <strong>local community groups</strong> (mutual aid groups) around the
+          UK to provide free help with:
           <ul>
             <li>translating leaflets, flyers and posters</li>
             <li>interpreting for vulnerable people</li>
@@ -44,7 +44,7 @@ const Home: FunctionComponent<{}> = () => {
         </div>
       </div>
       <Divider />
-      <Row gutter={16}>
+      <Row gutter={[16, 24]}>
         <Col xs={24} xl={12}>
           <Title level={4}>
             I speak, read or write a foreign language and want to help!
@@ -64,7 +64,7 @@ const Home: FunctionComponent<{}> = () => {
         <Col xs={24} xl={12}>
           <Title level={3}>A bit more about what we're doing...</Title>
           <Paragraph>
-            Since the Covid-19 outbreak in the UK began, thousands of local
+            Since the COVID-19 outbreak in the UK began, thousands of local
             mutual aid groups have been set up to serve vulnerable people in
             communities across the country. Many of these groups serve
             vulnerable people who speak little or no English.
@@ -83,7 +83,7 @@ const Home: FunctionComponent<{}> = () => {
           </Paragraph>
           <Paragraph>
             <a href="https://covidmutualaid.org/">
-              You can find your local mutual aid group on the Covid-19 Mutual
+              You can find your local mutual aid group on the COVID-19 Mutual
               Aid UK website.
             </a>
           </Paragraph>
