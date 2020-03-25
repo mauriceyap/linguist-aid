@@ -1,0 +1,30 @@
+@import "~antd/dist/antd.css";
+
+#header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+#content-container {
+  margin: 96px auto 32px;
+  min-height: calc(100vh - 64px);
+  width: 100%;
+
+  @media (min-width: 576px) {
+    width: 95%;
+  }
+  @media (min-width: 768px) {
+    width: 90%;
+  }
+  @media (min-width: 992px) {
+    width: 85%;
+  }
+  @media (min-width: 1200px) {
+    width: 80%;
+  }
+}
+
+#footer {
+  background: #bbb;
+}
