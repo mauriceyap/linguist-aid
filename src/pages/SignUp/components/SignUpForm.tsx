@@ -19,7 +19,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodeFormValues({ "form-name": "sign-up", values })
     })
-      .then(() => setFormSubmittedSuccess(true))
+      .then(response => setFormSubmittedSuccess(response.ok))
       .catch(() => setFormSubmittedSuccess(false));
   };
   return formSubmittedSuccess ? (
