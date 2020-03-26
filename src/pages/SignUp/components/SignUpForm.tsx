@@ -2,7 +2,7 @@ import { Alert, Form, Input, Row, Col, Button, Select, Switch } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import React, { FunctionComponent, useState } from "react";
 
-import LanguageSelect from "../../../components/LanguageSelect";
+import LanguageSelectFormItem from "../../../components/LanguageSelectFormItem";
 import encodeFormValues from "../../../utils/encodeFormValues";
 
 const SignUpForm: FunctionComponent<{}> = () => {
@@ -31,6 +31,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
       type="success"
       message="Thanks for signing up!"
       description="We've received your details and we'll pass them on to a mutual aid group if they need someone with your skills!"
+      showIcon
     />
   ) : (
     <>
@@ -41,9 +42,10 @@ const SignUpForm: FunctionComponent<{}> = () => {
             "Thanks for trying to sign up, but unfortunately, something went wrong when trying to send us your details. " +
             "Maybe your internet connection dropped out? " +
             "If this keeps happening, please drop us an email or a Facebook message, and we'll try and fix it! " +
-            "There's a link at the bottom of the page."
+            "There's a link to find our email address at the bottom of the page."
           }
           type="error"
+          showIcon
         />
       )}
       <Form
@@ -84,7 +86,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
               {fields.map((field, index) => (
                 <Row gutter={[20, 20]} key={field.key}>
                   <Col xs={24} sm={11}>
-                    <LanguageSelect
+                    <LanguageSelectFormItem
                       name={[field.name, "language"]}
                       validateTrigger={["onChange", "onBlur"]}
                       label={`Foreign language ${index + 1}`}
@@ -96,23 +98,24 @@ const SignUpForm: FunctionComponent<{}> = () => {
                       ]}
                     />
                     <Row>
-                      <Switch
-                        unCheckedChildren="Dialect"
-                        checkedChildren="Dialect"
-                        onChange={checked =>
-                          setShowDialectInputs({
-                            ...showDialectInputs,
-                            [field.key]: checked
-                          })
-                        }
-                      />
+                      <Row style={{ width: "100%" }}>
+                        <Switch
+                          unCheckedChildren="Dialect"
+                          checkedChildren="Dialect"
+                          onChange={checked =>
+                            setShowDialectInputs({
+                              ...showDialectInputs,
+                              [field.key]: checked
+                            })
+                          }
+                        />
+                      </Row>
                       {showDialectInputs[field.key] && (
-                        <Form.Item name={[field.name, "dialect"]} rules={[]}>
-                          <Input
-                            placeholder="e.g. Cantonese"
-                            style={{ marginLeft: 12 }}
-                          />
-                        </Form.Item>
+                        <Row style={{ width: "100%", marginTop: 16 }}>
+                          <Form.Item name={[field.name, "dialect"]} rules={[]}>
+                            <Input placeholder="e.g. Cantonese" />
+                          </Form.Item>
+                        </Row>
                       )}
                     </Row>
                   </Col>

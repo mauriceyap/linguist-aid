@@ -1,10 +1,31 @@
 import { Typography } from "antd";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
+import RequestHelpForm from "./components/RequestHelpForm";
 
 const { Title, Paragraph } = Typography;
 
+declare global {
+  interface Window {
+    enableRequestForm: () => void;
+    disableRequestForm: () => void;
+  }
+}
+
 const RequestHelp: FunctionComponent<{}> = () => {
-  return (
+  const [isRequestHelpFormEnabled, setRequestHelpFormEnabled] = useState(false);
+  window.enableRequestForm = () => setRequestHelpFormEnabled(true);
+  window.disableRequestForm = () => setRequestHelpFormEnabled(false);
+  return isRequestHelpFormEnabled ? (
+    <>
+      <Title>Request help from a volunteer</Title>
+      <Paragraph>
+        Send us a request using this form if your local group has a need for a
+        volunteer to translate or interpret. We'll do our best to find you a
+        match!
+      </Paragraph>
+      <RequestHelpForm />
+    </>
+  ) : (
     <>
       <Title>Request help from a volunteer</Title>
       <Paragraph strong>

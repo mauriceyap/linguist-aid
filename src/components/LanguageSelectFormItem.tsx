@@ -6,7 +6,7 @@ import getLanguageOptions from "../utils/getLanguageOptions";
 
 const languageOptions = getLanguageOptions();
 
-const LanguageSelect: FunctionComponent<Omit<
+const LanguageSelectFormItem: FunctionComponent<Omit<
   FormItemProps,
   "children"
 >> = props => (
@@ -31,4 +31,4 @@ const LanguageSelect: FunctionComponent<Omit<
   </Form.Item>
 );
 
-export default LanguageSelect;
+export default LanguageSelectFormItem;
