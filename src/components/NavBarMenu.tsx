@@ -23,10 +23,10 @@ const NavBarMenu: FunctionComponent<INavBarMenuProps> = ({
   >
     {menuItems.map(({ route, displayText, icon }) => (
       <Menu.Item key={route}>
-        {icon}
-        <span className="nav-bar-menu__link">
-          <Link to={route}>{displayText}</Link>
-        </span>
+        <Link to={route}>
+          {icon}
+          <span className="nav-bar-menu__link">{displayText}</span>
+        </Link>
       </Menu.Item>
     ))}
   </Menu>
