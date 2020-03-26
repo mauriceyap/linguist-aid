@@ -1,10 +1,9 @@
 import { Alert, Form, Input, Row, Col, Button, Select, Switch } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import React, { FunctionComponent, useState } from "react";
-import encodeFormValues from "../../../utils/encodeFormValues";
-import getLanguageOptions from "../../../utils/getLanguageOptions";
 
-const languageOptions = getLanguageOptions();
+import LanguageSelect from "../../../components/LanguageSelect";
+import encodeFormValues from "../../../utils/encodeFormValues";
 
 const SignUpForm: FunctionComponent<{}> = () => {
   const [form] = Form.useForm();
@@ -85,7 +84,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
               {fields.map((field, index) => (
                 <Row gutter={[20, 20]} key={field.key}>
                   <Col xs={24} sm={11}>
-                    <Form.Item
+                    <LanguageSelect
                       name={[field.name, "language"]}
                       validateTrigger={["onChange", "onBlur"]}
                       label={`Foreign language ${index + 1}`}
@@ -95,30 +94,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
                           message: "Please select a language"
                         }
                       ]}
-                    >
-                      <Select
-                        showSearch
-                        placeholder="Select a language"
-                        optionFilterProp="children"
-                        filterOption={(input, option) =>
-                          option?.value &&
-                          languageOptions[
-                            option.value
-                          ].lowerCaseSearchTerms.some(
-                            searchTerm =>
-                              searchTerm.indexOf(input.toLowerCase()) >= 0
-                          )
-                        }
-                      >
-                        {Object.entries(languageOptions).map(
-                          ([code, { displayName }]) => (
-                            <Select.Option key={code} value={code}>
-                              {displayName}
-                            </Select.Option>
-                          )
-                        )}
-                      </Select>
-                    </Form.Item>
+                    />
                     <Row>
                       <Switch
                         unCheckedChildren="Dialect"
