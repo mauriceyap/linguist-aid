@@ -1,9 +1,10 @@
 import { Alert, Form, Input, Row, Col, Button, Select, Switch } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-import ISO6391 from "iso-639-1";
 import React, { FunctionComponent, useState } from "react";
-import excludedLanguages from "../../../const/excludedLanguages";
 import encodeFormValues from "../../../utils/encodeFormValues";
+import getLanguageOptions from "../../../utils/getLanguageOptions";
+
+const languageOptions = getLanguageOptions();
 
 const SignUpForm: FunctionComponent<{}> = () => {
   const [form] = Form.useForm();
@@ -99,27 +100,23 @@ const SignUpForm: FunctionComponent<{}> = () => {
                         showSearch
                         placeholder="Select a language"
                         optionFilterProp="children"
-                        filterOption={(input, option) => {
-                          const searchTerm = input.toLowerCase();
-                          return (
-                            option?.value &&
-                            (ISO6391.getName(option.value)
-                              ?.toLowerCase()
-                              .indexOf(searchTerm) >= 0 ||
-                              ISO6391.getNativeName(option.value)
-                                ?.toLowerCase()
-                                .indexOf(searchTerm) >= 0)
-                          );
-                        }}
+                        filterOption={(input, option) =>
+                          option?.value &&
+                          languageOptions[
+                            option.value
+                          ].lowerCaseSearchTerms.some(
+                            searchTerm =>
+                              searchTerm.indexOf(input.toLowerCase()) >= 0
+                          )
+                        }
                       >
-                        {ISO6391.getAllCodes()
-                          .filter(code => !excludedLanguages.includes(code))
-                          .map(code => (
+                        {Object.entries(languageOptions).map(
+                          ([code, { displayName }]) => (
                             <Select.Option key={code} value={code}>
-                              {ISO6391.getName(code)} -{" "}
-                              {ISO6391.getNativeName(code)}
+                              {displayName}
                             </Select.Option>
-                          ))}
+                          )
+                        )}
                       </Select>
                     </Form.Item>
                     <Row>
