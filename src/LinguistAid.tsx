@@ -1,4 +1,5 @@
 import { FacebookFilled } from "@ant-design/icons";
+import { GithubFilled } from "@ant-design/icons";
 import { Layout } from "antd";
 import React, { FunctionComponent } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -59,7 +60,10 @@ const LinguistAid: FunctionComponent<{}> = () => (
           <div className="icons">
             <a href="https://fb.me/linguist.aid">
               <FacebookFilled />
-            </a>
+            </a> &nbsp;&nbsp;
+            <a href="https://github.com/mauriceyap/linguist-aid">
+              <GithubFilled />
+            </a> 
           </div>
         </Footer>
       </Layout>
