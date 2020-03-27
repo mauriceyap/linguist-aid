@@ -12,7 +12,7 @@ declare global {
 }
 
 const RequestHelp: FunctionComponent<{}> = () => {
-  const [isRequestHelpFormEnabled, setRequestHelpFormEnabled] = useState(false);
+  const [isRequestHelpFormEnabled, setRequestHelpFormEnabled] = useState(true);
   window.enableRequestForm = () => setRequestHelpFormEnabled(true);
   window.disableRequestForm = () => setRequestHelpFormEnabled(false);
   return isRequestHelpFormEnabled ? (
