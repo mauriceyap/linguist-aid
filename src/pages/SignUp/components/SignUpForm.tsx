@@ -194,6 +194,20 @@ const SignUpForm: FunctionComponent<{}> = () => {
           rules={[]}
         >
           <Input placeholder="e.g. john.smith3987897" />
+        </Form.Item>  
+        <Form.Item
+          label="Do you have professional/formal voluntary experience in translating or interpreting? (optional)"
+          name="prior-experience"
+          rules={[]} 
+        >
+          <Switch></Switch>
+        </Form.Item> 
+        <Form.Item
+          label="Anything else you want to let us know? (optional)"
+          name="anything-else"
+          rules={[]}   
+        >
+          <Input placeholder="e.g. any relevant information or questions" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
