@@ -207,7 +207,7 @@ const SignUpForm: FunctionComponent<{}> = () => {
           name="anything-else"
           rules={[]}   
         >
-          <Input placeholder="e.g. any relevant information or questions" />
+          <Input.TextArea placeholder="e.g. any relevant information or questions" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
