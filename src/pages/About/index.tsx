@@ -40,8 +40,8 @@ const About: FunctionComponent<{}> = () => {
         Message us on Facebook Messenger: m.me/linguist.aid
       </Paragraph>
       {isEmailVisible ? (
-        <Paragraph strong copyable={{ text: "linguist.aid@gmail.com" }}>
-          Email us: linguist.aid@gmail.com
+        <Paragraph strong copyable={{ text: "contact@linguist-aid.org.uk" }}>
+          Email us: contact@linguist-aid.org.uk
         </Paragraph>
       ) : (
         <Button
