@@ -146,7 +146,7 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
             <>
               <Paragraph>
                 Before sharing information about volunteers who have signed up,
-                we need to verify that your are a member of a mutual aid group.
+                we need to verify that you are a member of a mutual aid group.
                 We can do this in one of the following ways:
               </Paragraph>
               <ul>
