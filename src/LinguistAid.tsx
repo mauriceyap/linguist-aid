@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import RequestHelp from "./pages/RequestHelp";
 import SignUp from "./pages/SignUp";
 
-import "./LinguistAid.scss";
+import "./linguistAid.scss";
 import NavBarMenu from "./components/NavBarMenu";
 import About from "./pages/About";
 
@@ -60,10 +60,11 @@ const LinguistAid: FunctionComponent<{}> = () => (
           <div className="icons">
             <a href="https://fb.me/linguist.aid">
               <FacebookFilled />
-            </a> &nbsp;&nbsp;
+            </a>{" "}
+            &nbsp;&nbsp;
             <a href="https://github.com/mauriceyap/linguist-aid">
               <GithubFilled />
-            </a> 
+            </a>
           </div>
         </Footer>
       </Layout>
