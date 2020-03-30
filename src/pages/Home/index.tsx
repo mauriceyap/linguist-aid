@@ -1,22 +1,41 @@
 import { Button, Col, Divider, Row, Typography } from "antd";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState} from "react";
 import { useHistory } from "react-router-dom";
 
 import "./home.scss";
 
 const { Title, Paragraph } = Typography;
 
+const SITE_ID = 0;
+const AUTH_TOKEN = 0 // process.env
+
 const Home: FunctionComponent<{}> = () => {
   const history = useHistory();
   const goToSignUp = () => history.push("/sign-up");
   const goToRequestHelp = () => history.push("/request-help");
+
+  const [numVolunteers, setNumVolunteers] = useState<number | null>(null);
+
+  const getVolunteers = () => {
+    fetch("https://api.netlify.com/api/v1/sites/" + SITE_ID + "/forms", {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${AUTH_TOKEN}`,
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(res => res.json())
+    .then(res => setNumVolunteers(res[1].submission_count))
+  };
+
+  getVolunteers()
 
   return (
     <>
       <div className="hero">
         <div className="hero__title">Linguist Aid</div>
         <div className="hero__content">
-          During this COVID-19 outbreak, we're helping to connect{" "}
+          During this COVID-19 outbreak, we're helping to connect our {numVolunteers}{" "}
           <strong>multi-lingual volunteers</strong> to{" "}
           <strong>local community groups</strong> (mutual aid groups) around the
           UK to provide free help with:
