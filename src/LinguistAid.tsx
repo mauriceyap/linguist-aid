@@ -23,7 +23,9 @@ const LinguistAid: FunctionComponent<{}> = () => (
       <Layout>
         <Header id="header">
           <Link to="/">
-            <Logo />
+            <div className="logo-wrapper">
+              <Logo />
+            </div>
           </Link>
           <NavBarMenu mode="horizontal" />
         </Header>

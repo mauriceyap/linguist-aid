@@ -2,6 +2,8 @@ import { Button, Col, Divider, Row, Typography } from "antd";
 import React, { FunctionComponent } from "react";
 import { useHistory } from "react-router-dom";
 
+import Logo from "../../components/Logo";
+
 import "./home.scss";
 
 const { Title, Paragraph } = Typography;
@@ -14,7 +16,9 @@ const Home: FunctionComponent<{}> = () => {
   return (
     <>
       <div className="hero">
-        <div className="hero__title">Linguist Aid</div>
+        <div className="hero__logo">
+          <Logo />
+        </div>
         <div className="hero__content">
           During this COVID-19 outbreak, we're helping to connect{" "}
           <strong>multi-lingual volunteers</strong> to{" "}

@@ -59,7 +59,10 @@ const About: FunctionComponent<{}> = () => (
       Linguist Aid was created by{" "}
       <a href="https://mauriceyap.co.uk">Maurice Yap</a>,{" "}
       <a href="https://iamkelv.in">Kelvin Zhang</a> and{" "}
-      <a >Zelie Everest</a>.
+      <a href="https://www.linkedin.com/in/zelie-everest-a1329a15b/">
+        Zelie Everest
+      </a>
+      .
     </Paragraph>
   </>
 );

@@ -1,10 +1,13 @@
 .logo {
-  float: left;
   height: 100%;
 
   img {
     max-width: 100%;
-    max-height: calc(100% - 12px);
-    margin: 6px 0;
+    height: 100%;
+    vertical-align: baseline;
+  }
+
+  &__vector {
+    fill: #fff;
   }
 }

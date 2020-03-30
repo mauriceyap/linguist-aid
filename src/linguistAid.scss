@@ -1,6 +1,5 @@
 @import "~antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
 
 body {
   font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -20,6 +19,20 @@ body {
 
 .ant-typography {
   color: rgba(0, 0, 0, 0.85);
+}
+
+.logo-wrapper {
+  display: inline;
+
+  .logo {
+    padding-right: 12px;
+    margin: 4px 0;
+    float: left;
+
+    img {
+      height: calc(100% - 8px);
+    }
+  }
 }
 
 #header {
