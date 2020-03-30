@@ -253,6 +253,13 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
             <Radio.Button value="both">Speak, read and write</Radio.Button>
           </Radio.Group>
         </Form.Item>
+        <Form.Item
+          label="Anything else you want to let us know? (optional)"
+          name="anything-else"
+          rules={[]}   
+        >
+          <Input.TextArea placeholder="e.g. any further information or questions (feel free to link documents using Google Docs, Dropbox etc.)" />
+        </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
             Request a volunteer!

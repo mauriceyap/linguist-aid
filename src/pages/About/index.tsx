@@ -57,8 +57,9 @@ const About: FunctionComponent<{}> = () => (
     <Divider />
     <Paragraph type="secondary">
       Linguist Aid was created by{" "}
-      <a href="https://mauriceyap.co.uk">Maurice Yap</a> and{" "}
-      <a href="https://iamkelv.in">Kelvin Zhang</a>.
+      <a href="https://mauriceyap.co.uk">Maurice Yap</a>,{" "}
+      <a href="https://iamkelv.in">Kelvin Zhang</a> and{" "}
+      <a >Zelie Everest</a>.
     </Paragraph>
   </>
 );
