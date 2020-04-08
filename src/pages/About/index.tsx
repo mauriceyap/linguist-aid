@@ -33,8 +33,9 @@ const About: FunctionComponent<{}> = () => (
       >
         <InfoCircleOutlined />
       </Popover>{" "}
-      or making potential volunteers and mutual aid groups know that we exist,
-      do drop us a message through our Facebook page or an email!
+      or making potential volunteers and mutual aid groups and other
+      organisations know that we exist, do drop us a message through our
+      Facebook page or an email!
     </Paragraph>
     <Paragraph strong copyable={{ text: "https://m.me/linguist.aid" }}>
       Message us on Facebook Messenger: m.me/linguist.aid

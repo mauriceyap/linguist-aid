@@ -10,8 +10,9 @@ const SignUp: FunctionComponent<{}> = () => {
       <Paragraph>
         If you would like to offer your language skills to help support
         vulnerable people during this COVID-19 outbreak, please fill in the
-        form! If we receive a request from a local mutual aid group for help
-        with what you can offer, we'll pass on your details to them.
+        form! If we receive a request from a local mutual aid group or
+        orgnanisation for help with what you can offer, we'll pass on your
+        details to them.
       </Paragraph>
       <Divider>Some formalities...</Divider>
       <ul>
@@ -22,12 +23,13 @@ const SignUp: FunctionComponent<{}> = () => {
         <li>
           <Text>
             We will only pass on your details to people who we confirm to be
-            organisers within local COVID-19 mutual aid groups.{" "}
+            organisers within local COVID-19 mutual aid groups or charitable
+            organisations.{" "}
             <a href="https://covidmutualaid.org/local-groups/">
-              A list of these groups can be found at
+              A list of mutual aid groups can be found at
               covidmutualaid.org/local-groups.
             </a>{" "}
-            We will not share your data with any other people or organisations.
+            We will not share your data with anyone else.
           </Text>
         </li>
         <li>

@@ -20,17 +20,17 @@ const SignUpForm: FunctionComponent<{}> = () => {
       body: encodeFormValues({
         "form-name": "sign-up",
         languages: JSON.stringify(languages),
-        ...otherValues
-      })
+        ...otherValues,
+      }),
     })
-      .then(response => setFormSubmittedSuccess(response.ok))
+      .then((response) => setFormSubmittedSuccess(response.ok))
       .catch(() => setFormSubmittedSuccess(false));
   };
   return formSubmittedSuccess ? (
     <Alert
       type="success"
       message="Thanks for signing up!"
-      description="We've received your details and we'll pass them on to a mutual aid group if they need someone with your skills!"
+      description="We've received your details and we'll pass them on to a mutual aid group or organisation if they need someone with your skills!"
       showIcon
     />
   ) : (
@@ -63,8 +63,8 @@ const SignUpForm: FunctionComponent<{}> = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please enter your name in Roman (Latin) characters"
-                }
+                  message: "Please enter your name in Roman (Latin) characters",
+                },
               ]}
             >
               <Input placeholder="e.g. Mohamed Salah" />
@@ -93,8 +93,8 @@ const SignUpForm: FunctionComponent<{}> = () => {
                       rules={[
                         {
                           required: true,
-                          message: "Please select a language"
-                        }
+                          message: "Please select a language",
+                        },
                       ]}
                     />
                     <Row>
@@ -102,10 +102,10 @@ const SignUpForm: FunctionComponent<{}> = () => {
                         <Switch
                           unCheckedChildren="Dialect"
                           checkedChildren="Dialect"
-                          onChange={checked =>
+                          onChange={(checked) =>
                             setShowDialectInputs({
                               ...showDialectInputs,
-                              [field.key]: checked
+                              [field.key]: checked,
                             })
                           }
                         />
@@ -126,8 +126,8 @@ const SignUpForm: FunctionComponent<{}> = () => {
                       rules={[
                         {
                           required: true,
-                          message: "Please select your skills in this language"
-                        }
+                          message: "Please select your skills in this language",
+                        },
                       ]}
                       label="Skills in this language"
                     >
@@ -175,8 +175,8 @@ const SignUpForm: FunctionComponent<{}> = () => {
           rules={[
             {
               required: true,
-              message: "Please enter your email address"
-            }
+              message: "Please enter your email address",
+            },
           ]}
         >
           <Input placeholder="e.g. yes@gmail.com" type="email" />
@@ -194,18 +194,18 @@ const SignUpForm: FunctionComponent<{}> = () => {
           rules={[]}
         >
           <Input placeholder="e.g. john.smith3987897" />
-        </Form.Item>  
+        </Form.Item>
         <Form.Item
           label="Do you have professional/formal voluntary experience in translating or interpreting? (optional)"
           name="prior-experience"
-          rules={[]} 
+          rules={[]}
         >
           <Switch></Switch>
-        </Form.Item> 
+        </Form.Item>
         <Form.Item
           label="Anything else you want to let us know? (optional)"
           name="anything-else"
-          rules={[]}   
+          rules={[]}
         >
           <Input.TextArea placeholder="e.g. any relevant information or questions" />
         </Form.Item>

@@ -1,6 +1,6 @@
 # Linguist Aid
 
-We're helping to connect multi-lingual volunteers to mutual aid groups around the UK to provide free help with:
+We're helping to connect multi-lingual volunteers to mutual aid groups and other organisations around the UK to provide free help with:
 
 - translating leaflets, flyers and posters,
 - interpreting for vulnerable people,

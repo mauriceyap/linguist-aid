@@ -11,7 +11,7 @@ type TVerificationMethod = "facebook" | "email";
 
 const VerificationAddressLabel: Record<TVerificationMethod, string> = {
   facebook: "URL to your Facebook profile",
-  email: "Your email address"
+  email: "Your email address",
 };
 
 const VerificationAddressRequiredMessage: Record<
@@ -19,32 +19,32 @@ const VerificationAddressRequiredMessage: Record<
   string
 > = {
   facebook: "Please enter the URL for your Facebook profile",
-  email: "Please enter your email address"
+  email: "Please enter your email address",
 };
 
 const VerificationAddressPlaceholder: Record<TVerificationMethod, string> = {
   facebook: "e.g. facebook.com/zuck",
-  email: "e.g. yes@gmail.com"
+  email: "e.g. yes@gmail.com",
 };
 
 const VerificationAddressInputType: Record<TVerificationMethod, string> = {
   facebook: "text",
-  email: "email"
+  email: "email",
 };
 
 const VerificationLinkLabel: Record<TVerificationMethod, string> = {
   facebook: "URL to your mutual aid group's Facebook group",
-  email: "URL to your mutual aid group's website, or other site"
+  email: "URL to your organisation's website, or other site",
 };
 
 const VerificationLinkRequiredMessage: Record<TVerificationMethod, string> = {
   facebook: "Please enter the URL for your mutual aid group's Facebook group",
-  email: "Please enter your mutual aid group's website"
+  email: "Please enter your mutual aid group or organisation's website",
 };
 
 const VerificationLinkPlaceholder: Record<TVerificationMethod, string> = {
-  facebook: "e.g. facebook.com/groups/zoommemes",
-  email: "e.g. www.brownswoodmutualaid.org.uk"
+  facebook: "e.g. facebook.com/groups/my-local-group",
+  email: "e.g. www.brownswoodmutualaid.org.uk",
 };
 
 const RequestHelpForm: FunctionComponent<{}> = () => {
@@ -54,11 +54,11 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
   >(null);
   const [
     verificationMethod,
-    setVerificationMethod
+    setVerificationMethod,
   ] = useState<TVerificationMethod | null>(null);
 
   const onVerificationMethodChange = ({
-    target: { value }
+    target: { value },
   }: RadioChangeEvent) => setVerificationMethod(value as TVerificationMethod);
 
   const onSubmit = (values: Record<string, any>) => {
@@ -67,10 +67,10 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodeFormValues({
         "form-name": "request-help",
-        ...values
-      })
+        ...values,
+      }),
     })
-      .then(response => setFormSubmittedSuccess(response.ok))
+      .then((response) => setFormSubmittedSuccess(response.ok))
       .catch(() => setFormSubmittedSuccess(false));
   };
 
@@ -106,7 +106,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
         <Alert
           message={
             <Paragraph>
-              Your mutual aid group must be listed on{" "}
+              If you are requesting help for a local mutual aid group, it must
+              be listed on{" "}
               <a href="https://covidmutualaid.org/local-groups/">
                 the website of COVID-19 Mutual Aid UK
               </a>
@@ -118,13 +119,14 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
           showIcon
         />
         <Form.Item
-          label="Your mutual aid group"
+          label="Your mutual aid group or organisation"
           name="mutual-aid-group"
           rules={[
             {
               required: true,
-              message: "Please enter the name of your mutual aid group"
-            }
+              message:
+                "Please enter the name of your mutual aid group or organisation",
+            },
           ]}
         >
           <Input placeholder="e.g. Sandy Lane Covid-19 Mutual Aid" />
@@ -135,8 +137,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
           rules={[
             {
               required: true,
-              message: "Please enter your name"
-            }
+              message: "Please enter your name",
+            },
           ]}
         >
           <Input placeholder="Enter your name" />
@@ -146,8 +148,9 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
             <>
               <Paragraph>
                 Before sharing information about volunteers who have signed up,
-                we need to verify that you are a member of a mutual aid group.
-                We can do this in one of the following ways:
+                we need to verify that you are a member of a mutual aid group,
+                or work for a charitable organisation. We can do this in one of
+                the following ways:
               </Paragraph>
               <ul>
                 <li>
@@ -168,7 +171,7 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
                     {" "}
                     from us from an email address which is listed on the
                     website, Facebook page or other official account or listing
-                    for your local mutual aid group.
+                    for your local mutual aid group or organisation.
                   </Text>
                 </li>
               </ul>
@@ -183,8 +186,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
           rules={[
             {
               required: true,
-              message: "Please select a verification method"
-            }
+              message: "Please select a verification method",
+            },
           ]}
         >
           <Radio.Group onChange={onVerificationMethodChange}>
@@ -201,8 +204,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
                 {
                   required: true,
                   message:
-                    VerificationAddressRequiredMessage[verificationMethod]
-                }
+                    VerificationAddressRequiredMessage[verificationMethod],
+                },
               ]}
             >
               <Input
@@ -216,8 +219,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
               rules={[
                 {
                   required: true,
-                  message: VerificationLinkRequiredMessage[verificationMethod]
-                }
+                  message: VerificationLinkRequiredMessage[verificationMethod],
+                },
               ]}
             >
               <Input
@@ -233,8 +236,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
           rules={[
             {
               required: true,
-              message: "Please select a language"
-            }
+              message: "Please select a language",
+            },
           ]}
         />
         <Form.Item
@@ -243,8 +246,8 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
           rules={[
             {
               required: true,
-              message: "Please select the language skills needed"
-            }
+              message: "Please select the language skills needed",
+            },
           ]}
         >
           <Radio.Group>
@@ -256,7 +259,7 @@ const RequestHelpForm: FunctionComponent<{}> = () => {
         <Form.Item
           label="Anything else you want to let us know? (optional)"
           name="anything-else"
-          rules={[]}   
+          rules={[]}
         >
           <Input.TextArea placeholder="e.g. any further information or questions (feel free to link documents using Google Docs, Dropbox etc.)" />
         </Form.Item>

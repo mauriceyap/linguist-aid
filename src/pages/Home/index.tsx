@@ -22,8 +22,8 @@ const Home: FunctionComponent<{}> = () => {
         <div className="hero__content">
           During this COVID-19 outbreak, we're helping to connect{" "}
           <strong>multi-lingual volunteers</strong> to{" "}
-          <strong>local community groups</strong> (mutual aid groups) around the
-          UK to provide free help with:
+          <strong>local community groups</strong> (mutual aid groups) and other
+          organisations around the UK to provide free help with:
           <ul>
             <li>translating leaflets, flyers and posters</li>
             <li>interpreting for vulnerable people</li>
@@ -45,8 +45,8 @@ const Home: FunctionComponent<{}> = () => {
           </Button>
           <Divider />
           <Title level={4}>
-            I'm an organiser in a mutual aid group and we need help with foreign
-            languages!
+            I'm an organiser in a mutual aid group or charitable organisation
+            and we need help with foreign languages!
           </Title>
           <Button type="default" size="large" onClick={goToRequestHelp}>
             Request help
@@ -63,8 +63,8 @@ const Home: FunctionComponent<{}> = () => {
           <Paragraph>
             Linguist Aid is a project to connect together volunteers who are
             literate in, or fluently speak one or more foreign languages, with
-            mutual aid groups who need help to translate materials or interpret
-            to or for vulnerable people.
+            mutual aid groups and other organisations who need help to translate
+            materials or interpret to or for vulnerable people.
           </Paragraph>
           <Paragraph strong>
             We are only seeking volunteers to provide this specific type of help
